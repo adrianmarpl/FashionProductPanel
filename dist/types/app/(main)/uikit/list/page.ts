@@ -1,4 +1,4 @@
-// File: D:\Projekty\FashionProductsPanel\app\(main)\uikit\list\page.tsx
+// File: D:\Projekty\amcomp-repo\FashionProductPanel\app\(main)\uikit\list\page.tsx
 import * as entry from '../../../../../../app/(main)/uikit/list/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

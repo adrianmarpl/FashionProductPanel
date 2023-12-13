@@ -25,3 +25,11 @@ a {
 .layout-wrapper {
     min-height: 100vh;
 }
+
+.table-choose {
+    .p-grid {
+        height: calc(100vh - 215px);
+        overflow-y: auto;
+        align-content: flex-start;
+    }
+}

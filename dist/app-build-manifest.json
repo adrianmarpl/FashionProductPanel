@@ -11,6 +11,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(main)/uikit/list/page.js"
     ],
+    "/(main)/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/page.js"
+    ],
     "/(main)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

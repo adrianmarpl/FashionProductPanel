@@ -96,10 +96,10 @@ const ListDemo = () => {
         return (
             <div className="col-12">
                 <div className="flex flex-column md:flex-row align-items-center p-3 w-full">
-                    <img src={`${data.image}`} alt={data.name} className="my-4 md:my-0 w-9 md:w-10rem shadow-2 mr-5" />
+                    <img src={`${data.image}`} alt={data.name} className="my-4 md:my-0 w-9 md:w-5rem shadow-2 mr-5" />
                     <div className="flex-1 flex flex-column align-items-center text-center md:text-left">
                         <div className="font-bold text-2xl">{data.name}</div>
-                        <div className="mb-2">{data.description}</div>
+                        <div className="mb-2" alt={data.description} title={data.description}>{data.description?data.description.slice(0,45)+'...':''}</div>
                         {/* <Rating value={data.rating} readOnly cancel={false} className="mb-2"></Rating> */}
                         <div className="flex align-items-center">
                             <i className="pi pi-tag mr-2"></i>
@@ -164,7 +164,7 @@ const ListDemo = () => {
             </div>
             <div className="col-3">
                 <div className="card">
-                    <DataView emptyMessage='Brak wybranych' header={'Wybrane ubrania'} value={dataViewValue?.filter(x => x.selected)} layout={'list'} rows={99999} sortOrder={sortOrder} sortField={sortField} itemTemplate={itemTemplate} ></DataView>
+                    <DataView emptyMessage='Brak wybranych' className="table-choose" header={'Wybrane ubrania: '+dataViewValue?.filter(x => x.selected).length} value={dataViewValue?.filter(x => x.selected)} layout={'list'} rows={99999} sortOrder={sortOrder} sortField={sortField} itemTemplate={itemTemplate} ></DataView>
                 </div>
             </div>
 

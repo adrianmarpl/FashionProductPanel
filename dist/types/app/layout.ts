@@ -1,4 +1,4 @@
-// File: D:\Projekty\FashionProductsPanel\app\layout.tsx
+// File: D:\Projekty\amcomp-repo\FashionProductPanel\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
