@@ -127,6 +127,7 @@ declare namespace Demo {
         price?: number;
         category?: string;
         selected: boolean;
+        accept: boolean;
         [key: string]: string | string[] | number | boolean | undefined | ProductOrder[] | InventoryStatus;
     };
 

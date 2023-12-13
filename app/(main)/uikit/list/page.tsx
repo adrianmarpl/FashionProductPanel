@@ -99,7 +99,7 @@ const ListDemo = () => {
                     <img src={`${data.image}`} alt={data.name} className="my-4 md:my-0 w-9 md:w-5rem shadow-2 mr-5" />
                     <div className="flex-1 flex flex-column align-items-center text-center md:text-left">
                         <div className="font-bold text-2xl">{data.name}</div>
-                        <div className="mb-2" alt={data.description} title={data.description}>{data.description?data.description.slice(0,45)+'...':''}</div>
+                        <div className="mb-2" alt={data.description} title={data.description}>{data.description ? data.description.slice(0, 45) + '...' : ''}</div>
                         {/* <Rating value={data.rating} readOnly cancel={false} className="mb-2"></Rating> */}
                         <div className="flex align-items-center">
                             <i className="pi pi-tag mr-2"></i>
@@ -130,7 +130,7 @@ const ListDemo = () => {
                     <div className="flex flex-column align-items-center text-center mb-3">
                         <img src={`${data.image}`} alt={data.name} className="w-9 shadow-2 my-3 mx-0" />
                         <div className="text-2xl font-bold">{data.name}</div>
-                        <div className="mb-3" alt={data.description} title={data.description}>{data.description?data.description.slice(0,70)+'...':''}</div>
+                        <div className="mb-3" alt={data.description} title={data.description}>{data.description ? data.description.slice(0, 70) + '...' : ''}</div>
                         {/* <Rating value={data.rating} readOnly cancel={false} /> */}
                     </div>
                     <div className="flex align-items-center justify-content-between">
@@ -154,45 +154,28 @@ const ListDemo = () => {
         }
     };
 
+    const acceptProducts = () => {
+        dataViewValue?.filter(x => x.selected).forEach(x => {
+            x.selected = false;
+            x.accept = true;
+        });
+        changeList();
+    }
+
     return (
         <div className="grid">
             <div className="col-9">
                 <div className="card">
                     {/* header={dataViewHeader} */}
-                    <DataView value={filteredValue || dataViewValue} header={'Lista ubrań'} layout={layout} paginator rows={9} sortOrder={sortOrder} sortField={sortField} itemTemplate={itemTemplate} ></DataView>
+                    <DataView value={filteredValue || dataViewValue?.filter(x => !x.accept)} header={'Lista ubrań'} layout={layout} paginator rows={9} sortOrder={sortOrder} sortField={sortField} itemTemplate={itemTemplate} ></DataView>
                 </div>
             </div>
-            <div className="col-3">
-                <div className="card">
-                    <DataView emptyMessage='Brak wybranych' className="table-choose" header={'Wybrane ubrania: '+dataViewValue?.filter(x => x.selected).length} value={dataViewValue?.filter(x => x.selected)} layout={'list'} rows={99999} sortOrder={sortOrder} sortField={sortField} itemTemplate={itemTemplate} ></DataView>
+            <div className="col-3 fixed-panel">
+                <div className="card right-panel">
+                    <DataView emptyMessage='Brak wybranych' className="table-choose" header={'Wybrane ubrania: ' + dataViewValue?.filter(x => x.selected && !x.accept).length} value={dataViewValue?.filter(x => x.selected && !x.accept)} layout={'list'} rows={99999} sortOrder={sortOrder} sortField={sortField} itemTemplate={itemTemplate} ></DataView>
+                    <Button label="Zatwierdzam" icon="pi pi-check" severity="success" onClick={acceptProducts} disabled={dataViewValue?.filter(x => x.selected && !x.accept).length == 0} ></Button>
                 </div>
             </div>
-
-            {/* <div className="col-12 xl:col-8">
-                <div className="card">
-                    <h5>Lista1</h5>
-                    <PickList
-                        source={picklistSourceValue}
-                        target={picklistTargetValue}
-                        sourceHeader="From"
-                        targetHeader="To"
-                        itemTemplate={(item) => <div>{item.name}</div>}
-                        onChange={(e) => {
-                            setPicklistSourceValue(e.source);
-                            setPicklistTargetValue(e.target);
-                        }}
-                        sourceStyle={{ height: '200px' }}
-                        targetStyle={{ height: '200px' }}
-                    ></PickList>
-                </div>
-            </div>
-
-            <div className="col-12 xl:col-4">
-                <div className="card">
-                    <h5>OrderList</h5>
-                    <OrderList value={orderlistValue} listStyle={{ height: '200px' }} className="p-orderlist-responsive" header="Cities" itemTemplate={(item) => <div>{item.name}</div>} onChange={(e) => setOrderlistValue(e.value)}></OrderList>
-                </div>
-            </div> */}
         </div>
     );
 };

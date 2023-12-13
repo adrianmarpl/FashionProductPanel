@@ -26,7 +26,8 @@ const Crud = () => {
         description: '',
         category: '',
         price: 0,
-        selected: false
+        selected: false,
+        accept: false
     };
 
     const [products, setProducts] = useState(null);

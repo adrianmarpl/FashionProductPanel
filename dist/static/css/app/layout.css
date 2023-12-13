@@ -27616,9 +27616,21 @@ a {
 }
 
 .table-choose .p-grid {
-  height: calc(100vh - 215px);
+  height: calc(100vh - 260px);
   overflow-y: auto;
   align-content: flex-start;
+}
+
+.right-panel {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.fixed-panel {
+  position: fixed;
+  top: 90px;
+  right: 0px;
 }
 
 .layout-topbar {

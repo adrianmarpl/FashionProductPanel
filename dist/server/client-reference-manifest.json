@@ -48,14 +48,6 @@
         "async": false
       }
     },
-    "(app-client)/./app/(main)/uikit/list/page.tsx": {
-      "*": {
-        "id": "(sc_client)/./app/(main)/uikit/list/page.tsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
     "(app-client)/./app/(main)/page.tsx": {
       "*": {
         "id": "(sc_client)/./app/(main)/page.tsx",
@@ -67,6 +59,14 @@
     "(app-client)/./layout/layout.tsx": {
       "*": {
         "id": "(sc_client)/./layout/layout.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./app/(main)/uikit/list/page.tsx": {
+      "*": {
+        "id": "(sc_client)/./app/(main)/uikit/list/page.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -163,14 +163,6 @@
       ],
       "async": false
     },
-    "D:\\Projekty\\amcomp-repo\\FashionProductPanel\\app\\(main)\\uikit\\list\\page.tsx": {
-      "id": "(app-client)/./app/(main)/uikit/list/page.tsx",
-      "name": "*",
-      "chunks": [
-        "app/(main)/uikit/list/page:static/chunks/app/(main)/uikit/list/page.js"
-      ],
-      "async": false
-    },
     "D:\\Projekty\\amcomp-repo\\FashionProductPanel\\app\\(main)\\page.tsx": {
       "id": "(app-client)/./app/(main)/page.tsx",
       "name": "*",
@@ -186,14 +178,22 @@
         "app/(main)/layout:static/chunks/app/(main)/layout.js"
       ],
       "async": false
+    },
+    "D:\\Projekty\\amcomp-repo\\FashionProductPanel\\app\\(main)\\uikit\\list\\page.tsx": {
+      "id": "(app-client)/./app/(main)/uikit/list/page.tsx",
+      "name": "*",
+      "chunks": [
+        "app/(main)/uikit/list/page:static/chunks/app/(main)/uikit/list/page.js"
+      ],
+      "async": false
     }
   },
   "entryCSSFiles": {
     "D:\\Projekty\\amcomp-repo\\FashionProductPanel\\app\\layout": [
       "static/css/app/layout.css"
     ],
-    "D:\\Projekty\\amcomp-repo\\FashionProductPanel\\app\\(main)\\uikit\\list\\page": [],
     "D:\\Projekty\\amcomp-repo\\FashionProductPanel\\app\\(main)\\page": [],
-    "D:\\Projekty\\amcomp-repo\\FashionProductPanel\\app\\(main)\\layout": []
+    "D:\\Projekty\\amcomp-repo\\FashionProductPanel\\app\\(main)\\layout": [],
+    "D:\\Projekty\\amcomp-repo\\FashionProductPanel\\app\\(main)\\uikit\\list\\page": []
   }
 }
