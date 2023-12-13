@@ -261,7 +261,7 @@ const Crud = () => {
         return (
             <>
                 <span className="p-column-title">Reviews</span>
-                <Rating value={rowData.rating} readOnly cancel={false} />
+                {/* <Rating value={rowData.rating} readOnly cancel={false} /> */}
             </>
         );
     };
@@ -270,7 +270,7 @@ const Crud = () => {
         return (
             <>
                 <span className="p-column-title">Status</span>
-                <span className={`product-badge status-${rowData.inventoryStatus?.toLowerCase()}`}>{rowData.inventoryStatus}</span>
+                {/* <span className={`product-badge status-${rowData.inventoryStatus?.toLowerCase()}`}>{rowData.inventoryStatus}</span> */}
             </>
         );
     };

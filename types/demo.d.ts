@@ -126,6 +126,10 @@ declare namespace Demo {
         image?: string;
         price?: number;
         category?: string;
+        quantity?: number;
+        inventoryStatus?: InventoryStatus;
+        rating?: number;
+        orders?: ProductOrder[];
         selected: boolean;
         accept: boolean;
         [key: string]: string | string[] | number | boolean | undefined | ProductOrder[] | InventoryStatus;

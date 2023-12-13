@@ -99,7 +99,7 @@ const ListDemo = () => {
                     <img src={`${data.image}`} alt={data.name} className="my-4 md:my-0 w-9 md:w-5rem shadow-2 mr-5" />
                     <div className="flex-1 flex flex-column align-items-start text-center md:text-left">
                         <div className="font-bold text-2xl">{data.name}</div>
-                        <div className="mb-2" alt={data.description} title={data.description}>{data.description ? data.description.slice(0, 45) + '...' : ''}</div>
+                        <div className="mb-2" >{data.description ? data.description.slice(0, 45) + '...' : ''}</div>
                         {/* <Rating value={data.rating} readOnly cancel={false} className="mb-2"></Rating> */}
                         <div className="flex align-items-center">
                             <i className="pi pi-tag mr-2"></i>
@@ -130,7 +130,7 @@ const ListDemo = () => {
                     <div className="flex flex-column align-items-center text-center mb-3">
                         <img src={`${data.image}`} alt={data.name} className="w-9 shadow-2 my-3 mx-0" />
                         <div className="text-2xl font-bold">{data.name}</div>
-                        <div className="mb-3" alt={data.description} title={data.description}>{data.description ? data.description.slice(0, 70) + '...' : ''}</div>
+                        <div className="mb-3" >{data.description ? data.description.slice(0, 70) + '...' : ''}</div>
                         {/* <Rating value={data.rating} readOnly cancel={false} /> */}
                     </div>
                     <div className="flex align-items-center justify-content-between">

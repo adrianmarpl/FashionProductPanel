@@ -297,13 +297,10 @@ const TableDemo = () => {
         return formatCurrency(rowData.price as number);
     };
 
-    const ratingBodyTemplate = (rowData: Demo.Product) => {
-        return <Rating value={rowData.rating} readOnly cancel={false} />;
-    };
-
-    const statusBodyTemplate2 = (rowData: Demo.Product) => {
-        return <span className={`product-badge status-${rowData.inventoryStatus?.toLowerCase()}`}>{rowData.inventoryStatus}</span>;
-    };
+    
+    // const statusBodyTemplate2 = (rowData: Demo.Product) => {
+    //     return <span className={`product-badge status-${rowData.inventoryStatus?.toLowerCase()}`}>{rowData.inventoryStatus}</span>;
+    // };
 
     const rowExpansionTemplate = (data: Demo.Product) => {
         return (
@@ -427,8 +424,8 @@ const TableDemo = () => {
                         <Column header="Image" body={imageBodyTemplate} />
                         <Column field="price" header="Price" sortable body={priceBodyTemplate} />
                         <Column field="category" header="Category" sortable />
-                        <Column field="rating" header="Reviews" sortable body={ratingBodyTemplate} />
-                        <Column field="inventoryStatus" header="Status" sortable body={statusBodyTemplate2} />
+                        {/* <Column field="rating" header="Reviews" sortable body={ratingBodyTemplate} /> */}
+                        {/* <Column field="inventoryStatus" header="Status" sortable body={statusBodyTemplate2} /> */}
                     </DataTable>
                 </div>
             </div>
