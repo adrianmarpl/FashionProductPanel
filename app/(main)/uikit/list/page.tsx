@@ -97,7 +97,7 @@ const ListDemo = () => {
             <div className="col-12">
                 <div className="flex flex-column md:flex-row align-items-center p-3 w-full">
                     <img src={`${data.image}`} alt={data.name} className="my-4 md:my-0 w-9 md:w-5rem shadow-2 mr-5" />
-                    <div className="flex-1 flex flex-column align-items-center text-center md:text-left">
+                    <div className="flex-1 flex flex-column align-items-start text-center md:text-left">
                         <div className="font-bold text-2xl">{data.name}</div>
                         <div className="mb-2" alt={data.description} title={data.description}>{data.description ? data.description.slice(0, 45) + '...' : ''}</div>
                         {/* <Rating value={data.rating} readOnly cancel={false} className="mb-2"></Rating> */}
