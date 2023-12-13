@@ -102,7 +102,7 @@ const ListDemo = () => {
                         <div className="mb-2" >{data.description ? data.description.slice(0, 45) + '...' : ''}</div>
                         {/* <Rating value={data.rating} readOnly cancel={false} className="mb-2"></Rating> */}
                         <div className="flex align-items-center">
-                            <i className="pi pi-tag mr-2"></i>
+                            <i className="pi pi-tag mr-2"></i> 
                             <span className="font-semibold">{data.category}</span>
                         </div>
                     </div>
