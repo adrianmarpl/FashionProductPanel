@@ -69,6 +69,37 @@ const Dashboard = () => {
 
     const patternList = ['kwiatki','groszki','napisy','logo','moro','zwierzęce','pepitka','kratka','paski','wszystkie lubię'];
 
+
+    const generate = () => {
+        console.log('typeClothes', typeClothes);
+        console.log('skirtLength', skirtLength);
+        console.log('patterns', patterns);
+        console.log('styles', styles);
+        console.log('fashion', fashion);
+        console.log('pantsLength', pantsLength);
+        const data = {
+            typeClothes: [typeClothes],
+            skirtLength: skirtLength,
+            patterns: patterns,
+            styles: styles,
+            fashion: [fashion],
+            colors: ['red'],
+            pantsLength: pantsLength
+        };
+        var generateProducts = fetch('http://localhost:8000/query-items/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        }).then(response => response.json())
+        // .then(data => console.log('resp: ',data))
+        .catch((error) => console.error('Error:', error));
+        generateProducts.then((data) => {
+            console.log('products: ', data);
+        });
+    }
+
     useEffect(() => {
     }, []);
 
@@ -115,7 +146,7 @@ const Dashboard = () => {
                 </div>
             </div>
             <div className='floating-button'>
-                <Button label="Wygeneruj" rounded />
+                <Button label="Wygeneruj" rounded onClick={(e)=>generate()} />
             </div>
         </div>
     );
