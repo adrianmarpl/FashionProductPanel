@@ -46,3 +46,13 @@ a {
 .field-checkbox, .field-radiobutton{
     margin-bottom: 0px !important;
 }
+.floating-button {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    cursor: pointer;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}

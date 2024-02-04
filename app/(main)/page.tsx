@@ -3,35 +3,8 @@
 import { Button } from 'primereact/button';
 import { Checkbox, CheckboxChangeEvent } from 'primereact/checkbox';
 import { RadioButton } from 'primereact/radiobutton';
-
-import { Menu } from 'primereact/menu';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { LayoutContext } from '../../layout/context/layoutcontext';
-import Link from 'next/link';
-import { Demo } from '../../types/types';
-import { ChartData, ChartOptions } from 'chart.js';
 
-const lineData: ChartData = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [
-        {
-            label: 'First Dataset',
-            data: [65, 59, 80, 81, 56, 55, 40],
-            fill: false,
-            backgroundColor: '#2f4860',
-            borderColor: '#2f4860',
-            tension: 0.4
-        },
-        {
-            label: 'Second Dataset',
-            data: [28, 48, 40, 19, 86, 27, 90],
-            fill: false,
-            backgroundColor: '#00bb7e',
-            borderColor: '#00bb7e',
-            tension: 0.4
-        }
-    ]
-};
 interface RadioButtonListProps {
     name: string;
     dataList: string[];
@@ -94,6 +67,8 @@ const Dashboard = () => {
     const [fashion, setFashion] = useState(null);
     const [pantsLength, setPantsLength] = useState<string[]>([]);
 
+    const patternList = ['kwiatki','groszki','napisy','logo','moro','zwierzęce','pepitka','kratka','paski','wszystkie lubię'];
+
     useEffect(() => {
     }, []);
 
@@ -116,7 +91,7 @@ const Dashboard = () => {
                 <div className="card">
                     <h5>Wzory których nie chcesz nosić</h5>
                     <div className="grid">
-                        <CheckboxList name="patterns" dataList={['kwiatki','groszki','napisy','logo','moro','zwierzęce','pepitka','kratka','paski','wszystkie lubię']} value={patterns} setValue={setPatterns} />
+                        <CheckboxList name="patterns" dataList={patternList} value={patterns} setValue={setPatterns} />
                     </div>
                 </div>
                 <div className="card">
@@ -138,6 +113,9 @@ const Dashboard = () => {
                         <CheckboxList name="pantsLength" dataList={['do kostki', 'regular', 'długie']} value={pantsLength} setValue={setPantsLength} />
                     </div>
                 </div>
+            </div>
+            <div className='floating-button'>
+                <Button label="Wygeneruj" rounded />
             </div>
         </div>
     );
