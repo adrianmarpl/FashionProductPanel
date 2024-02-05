@@ -61,7 +61,7 @@ const CheckboxList: React.FC<CheckboxListProps> = ({ name, dataList, value, setV
 const Dashboard = () => {
     const skirtList = ['mini', 'przed kolano', 'midi', 'maxi'];
     const stylesList = ['boho','glamour','vintige','rockowy','smart casual','minimalistyczny','romantyczny','sportowy'];
-    const patternList = ['kwiatki','groszki','napisy','logo','moro','zwierzęce','pepitka','kratka','paski','wszystkie lubię'];
+    const patternList = ['kwiatki','groszki','napisy','logo','moro','zwierzęce','pepitka','kratka','paski']; //,'wszystkie lubię'
     const pantsList = ['do kostki', 'regular', 'długie'];
 
     const [typeClothes, setTypeClothes] = useState('mix');
@@ -82,7 +82,7 @@ const Dashboard = () => {
         console.log('fashion', fashion);
         console.log('pantsLength', pantsLength);
         const data = {
-            typeClothes: [typeClothes],
+            typeClothes: typeClothes=="mix"?['spodnie','sukienka']:[typeClothes],
             skirtLength: skirtLength,
             patterns: patterns,
             styles: styles,
@@ -114,7 +114,7 @@ const Dashboard = () => {
                 <div className="card">
                     <h5>Rodzaj ubrań</h5>
                     <div className="grid">
-                        <RadioButtonList name="typeClothes" dataList={['spodnie', 'sukienki', 'mix']} value={typeClothes} setValue={setTypeClothes} />
+                        <RadioButtonList name="typeClothes" dataList={['spodnie', 'sukienka', 'mix']} value={typeClothes} setValue={setTypeClothes} />
                     </div>
                 </div>
                 <div className="card">
