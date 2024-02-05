@@ -59,15 +59,19 @@ const CheckboxList: React.FC<CheckboxListProps> = ({ name, dataList, value, setV
 }
 
 const Dashboard = () => {
-
-    const [typeClothes, setTypeClothes] = useState(null);
-    const [skirtLength, setSkirtLength] = useState<string[]>([]);
-    const [patterns, setPatterns] = useState<string[]>([]);
-    const [styles, setStyles] = useState<string[]>([]);
-    const [fashion, setFashion] = useState(null);
-    const [pantsLength, setPantsLength] = useState<string[]>([]);
-
+    const skirtList = ['mini', 'przed kolano', 'midi', 'maxi'];
+    const stylesList = ['boho','glamour','vintige','rockowy','smart casual','minimalistyczny','romantyczny','sportowy'];
     const patternList = ['kwiatki','groszki','napisy','logo','moro','zwierzęce','pepitka','kratka','paski','wszystkie lubię'];
+    const pantsList = ['do kostki', 'regular', 'długie'];
+
+    const [typeClothes, setTypeClothes] = useState('mix');
+    const [skirtLength, setSkirtLength] = useState<string[]>(skirtList);
+    const [patterns, setPatterns] = useState<string[]>(patternList);
+    const [styles, setStyles] = useState<string[]>(stylesList);
+    const [colors, setColors] = useState<string[]>(['czerwony','zielony','biały']);
+    const [fashion, setFashion] = useState('regular');
+    const [pantsLength, setPantsLength] = useState<string[]>(pantsList);
+
 
 
     const generate = () => {
@@ -83,7 +87,7 @@ const Dashboard = () => {
             patterns: patterns,
             styles: styles,
             fashion: [fashion],
-            colors: ['red'],
+            colors: colors,
             pantsLength: pantsLength
         };
         var generateProducts = fetch('http://localhost:8000/query-items/', {
@@ -116,7 +120,7 @@ const Dashboard = () => {
                 <div className="card">
                     <h5>Preferowana długość spódnicy</h5>
                     <div className="grid">
-                        <CheckboxList name="skirtLength" dataList={['mini', 'przed kolano', 'midi', 'maxi']} value={skirtLength} setValue={setSkirtLength} />
+                        <CheckboxList name="skirtLength" dataList={skirtList} value={skirtLength} setValue={setSkirtLength} />
                     </div>
                 </div>
                 <div className="card">
@@ -128,7 +132,7 @@ const Dashboard = () => {
                 <div className="card">
                     <h5>Styl, który jest Tobie najbliższy</h5>
                     <div className="grid">
-                        <CheckboxList name="styles" dataList={['boho','glamour','vintige','rockowy','smart casual','minimalistyczny','romantyczny','sportowy']} value={styles} setValue={setStyles} />
+                        <CheckboxList name="styles" dataList={stylesList} value={styles} setValue={setStyles} />
                     </div>
                 </div>
                 <div className="card">
@@ -141,7 +145,7 @@ const Dashboard = () => {
                 <div className="card">
                     <h5>Spodnie z jaką długością nogawek preferujesz</h5>
                     <div className="grid">
-                        <CheckboxList name="pantsLength" dataList={['do kostki', 'regular', 'długie']} value={pantsLength} setValue={setPantsLength} />
+                        <CheckboxList name="pantsLength" dataList={pantsList} value={pantsLength} setValue={setPantsLength} />
                     </div>
                 </div>
             </div>
