@@ -115,8 +115,8 @@ const buildColorList = () => {
 }
 
 const Dashboard = () => {
-    //let url = 'http://domnet.ddns.net:8000';
-    let url = 'http://localhost:8000'
+    let url = 'http://domnet.ddns.net:8000';
+    //let url = 'http://localhost:8000'
 
     const skirtList = ['mini', 'przed kolano', 'midi', 'maxi'];
     const stylesList = ['boho', 'glamour', 'vintige', 'rockowy', 'smart casual', 'minimalistyczny', 'romantyczny', 'sportowy'];
@@ -189,7 +189,7 @@ const Dashboard = () => {
     }
 
     useEffect(() => {
-        function handleKeyDown(e) {
+        function handleKeyDown(e : any) {
             console.log('key', e.keyCode)
             if (e.keyCode == 32) {
                 console.log('key!', e.keyCode)
