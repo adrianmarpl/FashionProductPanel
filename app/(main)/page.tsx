@@ -193,7 +193,7 @@ const Dashboard = () => {
             console.log('key', e.keyCode)
             if (e.keyCode == 32) {
                 console.log('key!', e.keyCode)
-                generate();
+                //generateNext();
             }
         }
 
@@ -263,14 +263,14 @@ const Dashboard = () => {
             {loading && <div className='loading-panel'><ProgressSpinner /></div>}
             {visibleProducts && !loading &&
                 <div className="grid">
-                    {products2.length > generateIndex + 1 &&
-                        <ProductInfo product={products2[generateIndex]}></ProductInfo>
+                    {products2.length > 0 &&
+                        <ProductInfo product={products2[0]}></ProductInfo>
                     }
-                    {products.length > generateIndex + 1 &&
-                        <ProductInfo product={products[generateIndex]}></ProductInfo>
+                    {products.length > 0 &&
+                        <ProductInfo product={products[0]}></ProductInfo>
                     }
-                    {products3.length > generateIndex + 1 &&
-                        <ProductInfo product={products3[generateIndex]}></ProductInfo>
+                    {products3.length > 0 &&
+                        <ProductInfo product={products3[0]}></ProductInfo>
                     }
 
                     <div className='floating-button'>
