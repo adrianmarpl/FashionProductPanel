@@ -1,3 +1,8 @@
+build:
+docker build -t fashion-panel .
+docker run -p 7777:80 -d fashion-panel
+
+
 http://localhost:3000/uikit/list
 
 

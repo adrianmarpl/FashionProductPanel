@@ -56,3 +56,9 @@ a {
     transform: translate(-50%, -50%);
     z-index: 100;
 }
+.loading-panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Adjust as needed */  
+}
