@@ -198,7 +198,10 @@ const Dashboard = () => {
         }
 
         document.addEventListener('keydown', handleKeyDown);
-
+        fetch(url)
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch((error) => console.error('Error:', error));
         // Don't forget to clean up
         return function cleanup() {
             document.removeEventListener('keydown', handleKeyDown);
