@@ -85,7 +85,7 @@ const ProductInfo: React.FC<any> = ({ product }) => {
     return (
         <div className="col-12 md:col-4">
             <a href={product.link} target="_blank" rel="noreferrer">
-                <div className="card" style={{textAlign: 'center'}}>
+                <div className="card" style={{ textAlign: 'center' }}>
                     <img src={product.image} alt={product.name} />
                     <h5>{product.name}</h5>
                     <p>{product.description}</p>
@@ -189,7 +189,7 @@ const Dashboard = () => {
     }
 
     useEffect(() => {
-        function handleKeyDown(e : any) {
+        function handleKeyDown(e: any) {
             console.log('key', e.keyCode)
             if (e.keyCode == 32) {
                 console.log('key!', e.keyCode)
@@ -213,6 +213,11 @@ const Dashboard = () => {
         <div >
             {!visibleProducts && <div className="grid">
                 <div className="col-12">
+                    <div className="card">
+                        {/* <div className="grid"> */}
+                            <h5>154 567 produktów w bazie AI</h5>
+                        {/* </div> */}
+                    </div>
                     <div className="card">
                         <h5>Rodzaj ubrań</h5>
                         <div className="grid">
