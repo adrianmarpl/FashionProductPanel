@@ -215,7 +215,7 @@ const Dashboard = () => {
                 <div className="col-12">
                     <div className="card">
                         {/* <div className="grid"> */}
-                            <h5>154 567 produktów w bazie AI</h5>
+                            <h5>154 567 ubrań w bazie AI</h5>
                         {/* </div> */}
                     </div>
                     <div className="card">
